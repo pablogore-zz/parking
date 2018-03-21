@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+package com.spothero.grpc;
+
+service RateService {
+    rpc Calculate(CreateRequest) returns (CreateResponse) {}
+}
+
+message Rate {
+    string Days=2;
+    string time=3;
+    float Price=4;
+}
+
+message CreateRequest {
+    string from =1;
+    string to = 2;
+}
+
+message CreateResponse {
+    repeated Rate rate=2;
+}
