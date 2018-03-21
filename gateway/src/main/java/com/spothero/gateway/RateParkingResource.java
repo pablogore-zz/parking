@@ -1,6 +1,7 @@
 package com.spothero.gateway;
 
 
+import com.codahale.metrics.annotation.Timed;
 import com.spothero.grpc.CreateResponse;
 
 import javax.ws.rs.GET;
@@ -22,6 +23,7 @@ public class RateParkingResource {
     @GET
     @Path("{from}/{to}")
     @Produces({MediaType.APPLICATION_XML})
+    @Timed
     public Rates xml(@PathParam("from") String from , @PathParam("to") String to) throws InterruptedException {
         return buildResponse(from,to);
     }
@@ -30,6 +32,7 @@ public class RateParkingResource {
     @GET
     @Path("{from}/{to}")
     @Produces({MediaType.APPLICATION_JSON})
+    @Timed
     public Rates json(@PathParam("from") String from ,@PathParam("to") String to) throws InterruptedException {
         return buildResponse(from,to);
     }

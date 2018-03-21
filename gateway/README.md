@@ -6,15 +6,15 @@
 
 ## Requirements
 
-1. Publish a repo on Github that i can clone and run on my local machine
-2. Use Java, Scala or C# to complete this.   
+ok 1. Publish a repo on Github that i can clone and run on my local machine
+ok 2. Use Java, Scala or C# to complete this.   
 	- For JVM - Don’t use Spring Boot, Dropwizard or Scalatra to do this, but feel free to use the libraries employed by those frameworks (eg JAX-RS, Jersey, Metrics, Jackson, Akka, Jetty, etc)
 	- For C# - Use .NET Core
-5. Unit tests need to be in place
-6. API will need documentation and a contract published.  
-7. It should support JSON & XML over HTTP
-8. Bonus points for Protocol Buffers
-9. I should be able to curl against an API that computes a price for a specified datetime range given a JSON file of rates.  
+maso 5. Unit tests need to be in place
+ok 6. API will need documentation and a contract published.  
+ok 7. It should support JSON & XML over HTTP  
+ok 8. Bonus points for Protocol Buffers
+ok 9. I should be able to curl against an API that computes a price for a specified datetime range given a JSON file of rates.  
 10. **Optional for Junior** - Integration tests need to be in place. 
 11. **Optional for Mid to Junior** - I should also be able to publish that app to AWS/Azure/Google Cloud very simply.  
 12. **Optional for Junior** - Metrics for endpoint(s) captured and available to be queried via an endpoint  (eg average response time)

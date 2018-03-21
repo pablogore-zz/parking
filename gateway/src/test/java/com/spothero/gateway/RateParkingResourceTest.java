@@ -45,7 +45,7 @@ public class RateParkingResourceTest {
     public void testGetIt() {
 
         // Get XML
-        String xmlResponse = target.path("rate/2015-07-01T07:00:00Z/2015-07-01T12:00:00Z").request()
+        String xmlResponse = target.path("rate/2015-07-04T06:00:00Z/2015-07-04T19:00:00Z").request()
                 .accept(MediaType.APPLICATION_XML).get(String.class);
 
         System.out.println(xmlResponse);

@@ -6,10 +6,7 @@ import com.spothero.grpc.Rate;
 import com.spothero.grpc.RateServiceGrpc;
 import io.grpc.stub.StreamObserver;
 
-import java.time.DayOfWeek;
-import java.time.Instant;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
+import java.time.*;
 import java.time.format.TextStyle;
 import java.util.*;
 import java.util.stream.Stream;
@@ -27,25 +24,29 @@ public class RateServiceImpl extends RateServiceGrpc.RateServiceImplBase {
         List<Rate> list = ReadJson.readJson(path);
 
 
-        Instant from = Instant.parse( request.getFrom() );
-        ZonedDateTime fromZone = from.atZone(ZoneId.of("America/Montreal"));
-
-        String.format("%04d", fromZone.getHour());
 
 
-        Instant to = Instant.parse( request.getTo() );
-        ZonedDateTime toZone = to.atZone(ZoneId.of("America/Montreal"));
 
-        String.format("%04d", toZone.getHour());
+        LocalDateTime from = LocalDateTime.ofInstant(Instant.parse( request.getFrom()) , ZoneOffset.UTC);
 
-        String fromDayName = DayOfWeek.of(fromZone.getDayOfWeek().getValue()).getDisplayName(TextStyle.SHORT, Locale.ENGLISH).toLowerCase();
+        LocalDateTime to = LocalDateTime.ofInstant(Instant.parse( request.getTo()) , ZoneOffset.UTC);
 
-        String toDayName = DayOfWeek.of(toZone.getDayOfWeek().getValue()).getDisplayName(TextStyle.SHORT, Locale.ENGLISH).toLowerCase();
 
+
+        String fromDayName = DayOfWeek.of(from.getDayOfWeek().getValue()).getDisplayName(TextStyle.SHORT, Locale.ENGLISH).toLowerCase();
+
+        String toDayName = DayOfWeek.of(to.getDayOfWeek().getValue()).getDisplayName(TextStyle.SHORT, Locale.ENGLISH).toLowerCase();
+
+
+        String fromH =String.format("%s%s", String.format("%02d", from.getHour()), String.format("%02d", from.getMinute()));
+
+        String toH =String.format("%s%s", String.format("%02d", to.getHour()), String.format("%02d", to.getMinute()));
 
         Stream<Rate> f = list.stream().filter(r->
                 Arrays.asList(r.getDays().split(",")).contains(fromDayName) == true
                 && Arrays.asList(r.getDays().split(",")).contains(toDayName) == true
+                && verifyIntervalOfTime(fromH,toH  , r)
+
         );
 
 
@@ -65,5 +66,17 @@ public class RateServiceImpl extends RateServiceGrpc.RateServiceImplBase {
         responseObserver.onCompleted();
 
 
+    }
+
+
+    private boolean verifyIntervalOfTime(String from , String to , Rate r){
+        int fromInt = Integer.parseInt(from);
+        int toInt = Integer.parseInt(to);
+
+        int rateFrom=Integer.parseInt(r.getTime().split("-")[0]);
+        int rateTo=Integer.parseInt(r.getTime().split("-")[1]);
+
+        boolean isBetween = fromInt > rateFrom && toInt < rateTo;
+        return isBetween;
     }
 }

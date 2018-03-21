@@ -7,10 +7,9 @@
         <artifactId>parent-modules</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
-    <artifactId>grpc-demo</artifactId>
+    <artifactId>grpc-parking</artifactId>
 
-    <name>grpc-demo</name>
-    <url>http://maven.apache.org</url>
+    <name>grpc-parking</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
