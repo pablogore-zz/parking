@@ -17,7 +17,7 @@ ok 8. Bonus points for Protocol Buffers
 ok 9. I should be able to curl against an API that computes a price for a specified datetime range given a JSON file of rates.  
 10. **Optional for Junior** - Integration tests need to be in place. 
 11. **Optional for Mid to Junior** - I should also be able to publish that app to AWS/Azure/Google Cloud very simply.  
-12. **Optional for Junior** - Metrics for endpoint(s) captured and available to be queried via an endpoint  (eg average response time)
+ok 12. **Optional for Junior** - Metrics for endpoint(s) captured and available to be queried via an endpoint  (eg average response time)
 
 Sample file: 
 ```json
