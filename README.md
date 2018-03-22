@@ -23,3 +23,13 @@ cd api && mvn verify in one terminal
 
 #Documentation 
 I've provided a wsdl document where I exposed the interfaces of the API
+
+#Curl
+When api and grpc server  are up and running , we could test our service
+just using curl command.
+
+### xml
+curl -i -H "Accept: application/xml" -H "Content-Type: application/xml" -X GET http://localhost:9000/spothero/rate/2015-07-04T07:00:00Z/2015-07-04T12:00:00Z
+
+### json
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://localhost:9000/spothero/rate/2015-07-04T07:00:00Z/2015-07-04T12:00:00Z
