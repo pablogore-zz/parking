@@ -1,4 +1,4 @@
-package com.spothero.gateway;
+package com.spothero.api;
 
 
 import com.codahale.metrics.annotation.Timed;
@@ -9,9 +9,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * This class represent the api resources for calculate the parking rate

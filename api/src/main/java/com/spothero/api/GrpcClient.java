@@ -1,4 +1,4 @@
-package com.spothero.gateway;
+package com.spothero.api;
 
 import com.spothero.grpc.CreateRequest;
 import com.spothero.grpc.CreateResponse;

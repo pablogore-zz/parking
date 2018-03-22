@@ -1,4 +1,4 @@
-package com.spothero.gateway;
+package com.spothero.api;
 
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.junit.After;
@@ -9,8 +9,6 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
-
-import java.util.logging.Logger;
 
 import static org.junit.Assert.assertEquals;
 

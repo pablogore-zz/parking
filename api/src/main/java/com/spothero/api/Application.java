@@ -1,4 +1,4 @@
-package com.spothero.gateway;
+package com.spothero.api;
 
 import org.glassfish.jersey.server.ResourceConfig;
 import com.codahale.metrics.jersey2.InstrumentedResourceMethodApplicationListener;

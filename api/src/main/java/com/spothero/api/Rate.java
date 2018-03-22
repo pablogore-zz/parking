@@ -1,7 +1,6 @@
-package com.spothero.gateway;
+package com.spothero.api;
 
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.Date;
 import java.util.List;
 
 @XmlRootElement

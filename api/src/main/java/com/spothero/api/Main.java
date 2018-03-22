@@ -1,4 +1,4 @@
-package com.spothero.gateway;
+package com.spothero.api;
 
 import com.codahale.metrics.ConsoleReporter;
 import com.codahale.metrics.JmxReporter;
@@ -33,9 +33,9 @@ public class Main {
     public static HttpServer startServer() {
         // create a resource config that scans for JAX-RS resources and providers
         // in com.acme package
-        final ResourceConfig rc = new ResourceConfig().packages("com.spothero.gateway");
+        final ResourceConfig rc = new ResourceConfig().packages("com.spothero.api");
 
-        final Application app = new Application("com.spothero.gateway");
+        final Application app = new Application("com.spothero.api");
 
         ConsoleReporter.forRegistry(METRIC_REGISTRY)
                 .convertRatesTo(TimeUnit.SECONDS)

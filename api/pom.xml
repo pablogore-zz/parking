@@ -9,10 +9,10 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>gateway</artifactId>
+    <artifactId>api</artifactId>
     <packaging>jar</packaging>
 
-    <name>gateway</name>
+    <name>api</name>
 
     <dependencyManagement>
         <dependencies>
@@ -90,7 +90,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.spothero.gateway.Main</mainClass>
+                    <mainClass>com.spothero.api.Main</mainClass>
                 </configuration>
             </plugin>
 
