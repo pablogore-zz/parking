@@ -22,8 +22,8 @@
     </properties>
 
     <modules>
-        <module>api</module>
         <module>proto</module>
+        <module>api</module>
         <module>grpc</module>
   </modules>
 

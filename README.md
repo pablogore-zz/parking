@@ -7,7 +7,7 @@ Change path to where you will put your json files , in this case is
 ~/parking/files
 
 # Build 
-mvn package
+mvn package -Dmaven.test.skip=true (skip integration test)
 
 #Run GRPC Server
 cd grpc && mvn exec:java in one terminal
